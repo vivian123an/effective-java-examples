@@ -6,6 +6,9 @@ package org.effectivejava.examples.chapter02.item01;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.effectivejava.examples.chapter02.item01.Provider;
+import org.effectivejava.examples.chapter02.item01.Service;
+
 public class Services {
 	private Services() {
 	} // Prevents instantiation (Item 4)
@@ -26,6 +29,7 @@ public class Services {
 	// Service access API
 	public static Service newInstance() {
 		return newInstance(DEFAULT_PROVIDER_NAME);
+		
 	}
 
 	public static Service newInstance(String name) {
