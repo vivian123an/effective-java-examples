@@ -9,3 +9,5 @@ public class A {
          return b;
     }
 }
+
+class B{}
