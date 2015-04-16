@@ -1,9 +1,5 @@
 package google.guava;
 
-<<<<<<< HEAD
-public class ThrowablesTest {
-
-=======
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -77,5 +73,4 @@ public class ThrowablesTest {
 
           return null;
     }
->>>>>>> branch 'master' of https://github.com/vivian123an/effective-java-examples.git
 }
