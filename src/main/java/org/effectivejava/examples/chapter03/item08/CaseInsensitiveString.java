@@ -11,20 +11,19 @@ public final class CaseInsensitiveString {
 	}
 
 	// Broken - violates symmetry!
-	@Override
+	/*@Override
 	public boolean equals(Object o) {
 		if (o instanceof CaseInsensitiveString)
 			return s.equalsIgnoreCase(((CaseInsensitiveString) o).s);
 		if (o instanceof String) // One-way interoperability!
 			return s.equalsIgnoreCase((String) o);
 		return false;
-	}
+	}*/
 
 	// This version is correct.
-	// @Override public boolean equals(Object o) {
-	// return o instanceof CaseInsensitiveString &&
-	// ((CaseInsensitiveString) o).s.equalsIgnoreCase(s);
-	// }
+	@Override public boolean equals(Object o) {
+		return o instanceof CaseInsensitiveString &&((CaseInsensitiveString) o).s.equalsIgnoreCase(s);
+	}
 
 	public static void main(String[] args) {
 		CaseInsensitiveString cis = new CaseInsensitiveString("Polish");

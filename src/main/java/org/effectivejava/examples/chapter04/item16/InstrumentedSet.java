@@ -3,8 +3,10 @@ package org.effectivejava.examples.chapter04.item16;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class InstrumentedSet<E> extends ForwardingSet<E> {
 	private int addCount = 0;
@@ -34,5 +36,14 @@ public class InstrumentedSet<E> extends ForwardingSet<E> {
 				new HashSet<String>());
 		s.addAll(Arrays.asList("Snap", "Crackle", "Pop"));
 		System.out.println(s.getAddCount());
+		
+		/**
+		 * 可以用来计算所有的Set具体实现类
+		 */
+		InstrumentedSet<Date> s2 = new InstrumentedSet<Date>(
+				new TreeSet<Date>());
+		s2.addAll(Arrays.asList(new Date(),new Date(2012,4,6), new Date(1988,07,26)));
+		System.out.println(s2.getAddCount());
+		
 	}
 }
