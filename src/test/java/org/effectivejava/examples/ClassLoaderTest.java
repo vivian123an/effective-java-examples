@@ -35,7 +35,7 @@ public class ClassLoaderTest {
 		//E:\\\Users\\vivian\\workspace\\.metadata\\.plugins\\org.eclipse.debug.core\\.launches
 		//D:\\Users\no1\\git\\effective-java-examples\\target\\test-classes\\org\\effectivejava\\examples
 		
-		Class clazz = c1.load("A");
+		Class clazz = c1.load("org.effectivejava.examples.A");
 		Object aInstance = clazz.newInstance();
 
 		Method method1 = clazz.getMethod("setB", B.class);
