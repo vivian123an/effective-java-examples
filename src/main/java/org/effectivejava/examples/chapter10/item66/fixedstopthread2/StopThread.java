@@ -9,9 +9,11 @@ public class StopThread {
 	public static void main(String[] args) throws InterruptedException {
 		Thread backgroundThread = new Thread(new Runnable() {
 			public void run() {
+				long start = System.currentTimeMillis();
 				int i = 0;
 				while (!stopRequested)
 					i++;
+				System.out.println("thread end:"+(System.currentTimeMillis()-start));
 			}
 		});
 		backgroundThread.start();
