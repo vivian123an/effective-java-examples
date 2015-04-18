@@ -6,11 +6,11 @@ import java.util.concurrent.TimeUnit;
 public class StopThread {
 	private static boolean stopRequested;
 
-	private static synchronized void requestStop() {
+	private static synchronized void setRequestStop() {
 		stopRequested = true;
 	}
 
-	private static synchronized boolean stopRequested() {
+	private static synchronized boolean readStopRequested() {
 		return stopRequested;
 	}
 
@@ -18,13 +18,13 @@ public class StopThread {
 		Thread backgroundThread = new Thread(new Runnable() {
 			public void run() {
 				int i = 0;
-				while (!stopRequested())
+				while (!readStopRequested())
 					i++;
 			}
 		});
 		backgroundThread.start();
 
 		TimeUnit.SECONDS.sleep(1);
-		requestStop();
+		setRequestStop();
 	}
 }
